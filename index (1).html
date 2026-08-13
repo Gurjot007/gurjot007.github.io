@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Name — Journalist Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1b2129;
+    --paper:#f5f1e7;
+    --paper-raised:#ece5d4;
+    --wire-red:#a83a2c;
+    --mute:#6d6a5e;
+    --line:#d6cfb9;
+    --gold:#8a6a24;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Source Serif 4', serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  .wrap{max-width:880px; margin:0 auto; padding:0 28px;}
+
+  /* ===== MASTHEAD ===== */
+  .masthead{
+    border-bottom:3px solid var(--ink);
+    padding-top:22px;
+  }
+  .masthead-top{
+    display:flex; justify-content:space-between; align-items:baseline;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--mute);
+    padding-bottom:14px;
+  }
+  .masthead-top span.tag{
+    color:var(--wire-red); font-weight:500;
+  }
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    padding:56px 0 64px;
+    border-bottom:1px solid var(--line);
+  }
+  .hero h1{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(42px, 8vw, 74px);
+    letter-spacing:-0.01em;
+    line-height:0.98;
+  }
+  .hero .role{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--wire-red);
+    margin-top:16px;
+  }
+  .hero .dek{
+    max-width:560px;
+    font-size:18px;
+    color:#3a3a35;
+    margin-top:18px;
+  }
+  .stamp{
+    position:absolute;
+    top:48px; right:0;
+    width:118px; height:118px;
+    border:2px solid var(--wire-red);
+    border-radius:50%;
+    transform:rotate(-14deg);
+    display:flex; align-items:center; justify-content:center;
+    text-align:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--wire-red);
+    opacity:.85;
+  }
+  .stamp::before{
+    content:"";
+    position:absolute; inset:6px;
+    border:1px dashed var(--wire-red);
+    border-radius:50%;
+    opacity:.6;
+  }
+  @media (max-width:640px){ .stamp{display:none;} }
+
+  /* ===== SECTION LABELS ===== */
+  .section{padding:52px 0;}
+  .section + .section{border-top:1px solid var(--line);}
+  .section-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--mute);
+    display:flex; align-items:center; gap:10px;
+    margin-bottom:28px;
+  }
+  .section-label::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:var(--line);
+  }
+
+  /* ===== FEATURED DISPATCH ===== */
+  .featured{
+    padding:0 0 40px;
+  }
+  .featured-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--wire-red);
+    margin-bottom:14px;
+  }
+  .featured-media{
+    position:relative;
+    display:block;
+    border:1px solid var(--ink);
+    overflow:hidden;
+    background:var(--ink);
+  }
+  .featured-media img{
+    display:block;
+    width:100%;
+    height:auto;
+    aspect-ratio:16/9;
+    object-fit:cover;
+    opacity:.92;
+    transition:opacity .2s ease, transform .3s ease;
+  }
+  .featured-media:hover img{ opacity:1; transform:scale(1.015); }
+  .play-badge{
+    position:absolute; top:50%; left:50%;
+    transform:translate(-50%,-50%);
+    width:68px; height:68px;
+    border-radius:50%;
+    background:var(--wire-red);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 4px 18px rgba(0,0,0,.35);
+  }
+  .play-badge::after{
+    content:"";
+    border-style:solid;
+    border-width:11px 0 11px 18px;
+    border-color:transparent transparent transparent var(--paper);
+    margin-left:4px;
+  }
+  .featured-caption{
+    display:flex; justify-content:space-between; align-items:baseline;
+    padding:10px 2px 0;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    color:var(--mute);
+  }
+  .featured h3{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:30px;
+    line-height:1.2;
+    margin-top:16px;
+  }
+  .featured h3 a{ text-decoration:none; }
+  .featured h3 a:hover{ text-decoration:underline; text-decoration-color:var(--wire-red); }
+  .featured p.dek2{
+    max-width:600px;
+    font-size:16px;
+    color:#3a3a35;
+    margin-top:8px;
+  }
+
+  /* ===== DISPATCHES (clips) ===== */
+  .dispatch{
+    padding:22px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .dispatch:last-child{border-bottom:none;}
+  .dispatch-meta{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--wire-red);
+    margin-bottom:8px;
+  }
+  .dispatch-meta .outlet{color:var(--mute);}
+  .dispatch h3{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:24px;
+    line-height:1.25;
+    margin-bottom:8px;
+  }
+  .dispatch h3 a{
+    text-decoration:none;
+    border-bottom:1px solid transparent;
+    transition:border-color .15s ease;
+  }
+  .dispatch h3 a:hover{ border-bottom-color:var(--ink); }
+  .dispatch p{
+    color:#3a3a35;
+    font-size:15.5px;
+    max-width:640px;
+  }
+  .dispatch.placeholder{ color:var(--mute); }
+  .dispatch.placeholder h3{ color:#a29f92; font-style:italic; font-weight:400;}
+
+  /* ===== BIO ===== */
+  .bio p{
+    max-width:620px;
+    font-size:17px;
+    color:#2c2c28;
+  }
+  .bio p + p{margin-top:14px;}
+
+  /* ===== CREDENTIAL / CONTACT ===== */
+  .credential{
+    border:1px solid var(--ink);
+    padding:26px 28px;
+    max-width:460px;
+    position:relative;
+    background:var(--paper-raised);
+  }
+  .credential::before{
+    content:"";
+    position:absolute; left:-1px; top:50%;
+    width:12px; height:12px;
+    background:var(--paper);
+    border:1px solid var(--ink);
+    border-radius:50%;
+    transform:translate(-50%,-50%);
+  }
+  .credential::after{
+    content:"";
+    position:absolute; right:-1px; top:50%;
+    width:12px; height:12px;
+    background:var(--paper);
+    border:1px solid var(--ink);
+    border-radius:50%;
+    transform:translate(50%,-50%);
+  }
+  .credential .row{
+    display:flex; justify-content:space-between; gap:20px;
+    padding:9px 0;
+    border-bottom:1px dotted var(--line);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+  }
+  .credential .row:last-child{border-bottom:none;}
+  .credential .row span:first-child{
+    color:var(--mute); text-transform:uppercase; letter-spacing:.06em; font-size:11px;
+  }
+  .credential .row a{ text-decoration:underline; text-decoration-color:var(--line); }
+
+  /* ===== FOOTER ===== */
+  footer{
+    padding:34px 0 60px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--mute);
+    letter-spacing:.05em;
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap masthead-top">
+    <span>Field Dispatches — Portfolio Edition</span>
+    <span class="tag">● Available for assignment</span>
+  </div>
+</header>
+
+<section class="hero wrap">
+  <div class="stamp">Verified<br>Byline</div>
+  <!-- EDIT ME: your name -->
+  <h1>Your Name</h1>
+  <!-- EDIT ME: your beat -->
+  <div class="role">Field Correspondent — Politics &amp; Climate</div>
+  <!-- EDIT ME: one-line dek -->
+  <p class="dek">Reporting from the ground on the stories that move policy and people. Currently based in [City] and open to new assignments.</p>
+</section>
+
+<section class="section wrap bio">
+  <div class="section-label">Byline</div>
+  <!-- EDIT ME: bio, 2-3 short paragraphs -->
+  <p>I'm a journalist covering [your beat — e.g. South Asia, climate, breaking news]. My reporting has appeared on outlets including BBC News, and I specialise in [ground reporting / investigations / features — pick what fits].</p>
+  <p>I'm currently looking for [staff position / freelance assignments / a specific beat] and available to start [timeframe].</p>
+</section>
+
+<section class="section wrap">
+  <div class="section-label">Dispatches — Selected Work</div>
+
+  <!-- FEATURED CLIP: your BBC on-camera report, shown large with thumbnail -->
+  <div class="featured">
+    <div class="featured-tag">★ Featured — On-Air Correspondence</div>
+    <a class="featured-media" href="https://www.youtube.com/watch?v=nodjyWPailA" target="_blank" rel="noopener">
+      <img src="https://img.youtube.com/vi/nodjyWPailA/maxresdefault.jpg" alt="BBC News report on the Punjab floods" loading="lazy">
+      <span class="play-badge"></span>
+    </a>
+    <div class="featured-caption">
+      <span>BBC News</span>
+      <span>Video Report</span>
+    </div>
+    <h3><a href="https://www.youtube.com/watch?v=nodjyWPailA" target="_blank" rel="noopener">Reporting on the Punjab Floods</a></h3>
+    <!-- EDIT ME: expand this into 2-3 sentences on what you covered and how you presented it -->
+    <p class="dek2">On-camera field report for BBC News covering the impact and response to severe flooding across Punjab — reporting live from the ground under pressure, on camera, in front of a national audience.</p>
+  </div>
+
+  <!-- EDIT ME: duplicate this block for each additional clip -->
+  <article class="dispatch placeholder">
+    <div class="dispatch-meta"><span class="outlet">Outlet Name</span> — Date</div>
+    <h3><a href="#" target="_blank" rel="noopener">Headline of the piece goes here</a></h3>
+    <p>One-line description of the story and why it matters.</p>
+  </article>
+
+  <article class="dispatch placeholder">
+    <div class="dispatch-meta"><span class="outlet">Outlet Name</span> — Date</div>
+    <h3><a href="#" target="_blank" rel="noopener">Headline of the piece goes here</a></h3>
+    <p>One-line description of the story and why it matters.</p>
+  </article>
+
+  <article class="dispatch placeholder">
+    <div class="dispatch-meta"><span class="outlet">Outlet Name</span> — Date</div>
+    <h3><a href="#" target="_blank" rel="noopener">Headline of the piece goes here</a></h3>
+    <p>One-line description of the story and why it matters.</p>
+  </article>
+</section>
+
+<section class="section wrap">
+  <div class="section-label">Press Credentials</div>
+  <div class="credential">
+    <!-- EDIT ME: contact details -->
+    <div class="row"><span>Email</span><a href="mailto:you@example.com">you@example.com</a></div>
+    <div class="row"><span>X / Twitter</span><a href="#" target="_blank" rel="noopener">@yourhandle</a></div>
+    <div class="row"><span>LinkedIn</span><a href="#" target="_blank" rel="noopener">linkedin.com/in/yourname</a></div>
+    <div class="row"><span>Based in</span><span>Your City, Country</span></div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <!-- EDIT ME: keep or remove -->
+  © <span id="year"></span> Your Name. Built for editorial review.
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
