@@ -3,7 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gurjot Singh | Multiplatform Video Producer</title>
+<meta name="description" content="Gurjot Singh, journalist and producer working across reporting, video, planning and digital storytelling.">
+<meta property="og:title" content="Gurjot Singh | Journalist and Producer">
+<meta property="og:description" content="Journalist and producer working across reporting, video, planning and digital storytelling.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gurjot007.github.io/">
+<meta property="og:image" content="https://gurjot007.github.io/profile.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gurjot Singh | Journalist and Producer">
+<meta name="twitter:description" content="Journalist and producer working across reporting, video, planning and digital storytelling.">
+<meta name="twitter:image" content="https://gurjot007.github.io/profile.jpg">
+<title>Gurjot Singh | Journalist and Producer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -190,6 +200,38 @@
     flex:1;
     height:1px;
     background:var(--line);
+  }
+
+  /* ===== FEATURED WRITING ===== */
+  .featured-writing .featured-article{
+    display:block;
+    border:1px solid var(--ink);
+    background:var(--paper-raised);
+    overflow:hidden;
+    box-shadow:var(--shadow);
+  }
+  .featured-writing .featured-article img{
+    width:100%;
+    max-height:520px;
+    object-fit:cover;
+    object-position:top;
+    transition:transform .35s ease;
+  }
+  .featured-writing .featured-article:hover img{transform:scale(1.01);}
+  .featured-writing .dispatch-meta{margin-top:14px;}
+  .featured-writing h3{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    font-size:27px;
+    line-height:1.2;
+    margin-top:7px;
+  }
+  .featured-writing h3 a{text-decoration:none;}
+  .featured-writing h3 a:hover{
+    text-decoration:underline;
+    text-decoration-color:var(--accent);
+    text-decoration-thickness:2px;
+    text-underline-offset:4px;
   }
 
   /* ===== CAPABILITIES GRID ===== */
@@ -495,7 +537,6 @@
     <span class="corner c2"></span>
     <span class="corner c3"></span>
     <span class="corner c4"></span>
-    <span class="rec">Portfolio</span>
   </div>
   <div>
     <h1>Gurjot Singh</h1>
@@ -505,23 +546,11 @@
 </section>
 
 <section class="section wrap">
-  <div class="section-label">What I Bring</div>
-  <div class="caps">
-    <div class="cap"><div class="k">On-Screen Presence</div><div class="v">Confident on-screen presence, from the field to the studio.</div></div>
-    <div class="cap"><div class="k">Ground Reports &amp; Digital Video</div><div class="v">Producing ground reports and digital videos for BBC's Indian-language services, while tracking trends that shape which stories get made.</div></div>
-    <div class="cap"><div class="k">Video Editing</div><div class="v">Comfortable with basic video editing in Final Cut Pro and other softwares.</div></div>
-    <div class="cap"><div class="k">Ground Reporting</div><div class="v">Filed from flashpoints: floods, protests, and fast-moving public interest stories.</div></div>
-    <div class="cap"><div class="k">Languages</div><div class="v">English, Punjabi, Hindi. French in progress.</div></div>
-    <div class="cap"><div class="k">Verification</div><div class="v">Comfortable with reverse image search, geolocation, and UGC verification workflows.</div></div>
-  </div>
-</section>
-
-<section class="section wrap">
   <div class="section-label">The Reel</div>
 
   <div class="reel-item">
     <a class="reel-media" href="https://www.youtube.com/watch?v=nodjyWPailA" target="_blank" rel="noopener">
-      <img src="https://img.youtube.com/vi/nodjyWPailA/hqdefault.jpg" alt="On screen for BBC World Service TV, Punjab floods report" loading="lazy">
+      <img src="punjab-floods.png" alt="On screen for BBC World Service TV, Punjab floods report" loading="lazy">
       <span class="play-badge"></span>
     </a>
     <div class="reel-cap"><span>BBC World Service TV</span><span>On-Screen Report</span></div>
@@ -570,17 +599,38 @@
   </div>
 </section>
 
+<section class="section wrap featured-writing">
+  <div class="section-label">Selected Story</div>
+  <a class="featured-article" href="https://www.bbc.com/news/articles/cm2z7gkd87lo" target="_blank" rel="noopener">
+    <img src="sikh-man-tumour.png" alt="BBC.com article: Sikh man with tumour held by US immigration denied medical care" loading="lazy">
+  </a>
+  <div class="dispatch-meta"><span class="outlet">BBC.com</span> | Report</div>
+  <h3><a href="https://www.bbc.com/news/articles/cm2z7gkd87lo" target="_blank" rel="noopener">Sikh Man with Tumour Held by US Immigration Denied Medical Care</a></h3>
+</section>
+
+<section class="section wrap">
+  <div class="section-label">What I Bring</div>
+  <div class="caps">
+    <div class="cap"><div class="k">On-Screen Presence</div><div class="v">Confident on-screen presence, from the field to the studio.</div></div>
+    <div class="cap"><div class="k">Ground Reports &amp; Digital Video</div><div class="v">Producing ground reports and digital videos for BBC's Indian-language services, while tracking trends that shape which stories get made.</div></div>
+    <div class="cap"><div class="k">Video Editing</div><div class="v">Comfortable with basic video editing in Final Cut Pro and other softwares.</div></div>
+    <div class="cap"><div class="k">Ground Reporting</div><div class="v">Filed from flashpoints: floods, protests, and fast-moving public interest stories.</div></div>
+    <div class="cap"><div class="k">Languages</div><div class="v">English, Punjabi, Hindi. French in progress.</div></div>
+    <div class="cap"><div class="k">Verification</div><div class="v">Comfortable with reverse image search, geolocation, and UGC verification workflows.</div></div>
+  </div>
+</section>
+
 <section class="section wrap">
   <div class="section-label">Selected Writing</div>
 
   <div class="compact-list">
     <div class="compact-row">
-      <h4><a href="https://www.hindustantimes.com/cities/chandigarh-news/tragedy-strikes-ludhiana-as-family-of-five-perishes-in-gas-leak-clinic-owner-and-wife-among-victims-101682881626532.html" target="_blank" rel="noopener">Tragedy Strikes Ludhiana as Family of Five Perishes in Gas Leak</a></h4>
-      <span class="meta">Hindustan Times</span>
-    </div>
-    <div class="compact-row">
       <h4><a href="https://www.bbc.com/news/articles/cm2z7gkd87lo" target="_blank" rel="noopener">Sikh Man with Tumour Held by US Immigration Denied Medical Care</a></h4>
       <span class="meta">BBC.com</span>
+    </div>
+    <div class="compact-row">
+      <h4><a href="https://www.hindustantimes.com/cities/chandigarh-news/tragedy-strikes-ludhiana-as-family-of-five-perishes-in-gas-leak-clinic-owner-and-wife-among-victims-101682881626532.html" target="_blank" rel="noopener">Tragedy Strikes Ludhiana as Family of Five Perishes in Gas Leak</a></h4>
+      <span class="meta">Hindustan Times</span>
     </div>
     <div class="compact-row">
       <h4><a href="https://www.bbc.com/punjabi/articles/c2q7py4dvr7o" target="_blank" rel="noopener">How the Protesting Farmers Spend Their Nights on the Roads</a></h4>
@@ -635,19 +685,19 @@
 <section class="section wrap">
   <div class="section-label">Experience</div>
   <div class="exp-row">
-    <div class="exp-date">Jan - Mar 2026</div>
-    <div>
-      <div class="exp-role">Producer (Planning)</div>
-      <div class="exp-org">BBC Collective Newsroom | Input Team</div>
-      <div class="exp-desc">Worked with the Input Team across BBC Indian languages, coordinating between Indian-language services and wider BBC teams. Wrote story prospects for wider BBC teams, reported original stories, and assisted in the roll out of planned series on different themes.</div>
-    </div>
-  </div>
-  <div class="exp-row">
     <div class="exp-date">Oct 2023 - Present</div>
     <div>
       <div class="exp-role">Producer &amp; Journalist</div>
       <div class="exp-org">Collective Newsroom (formerly BBC News India)</div>
       <div class="exp-desc">Writing and producing original visual and text stories for the BBC World Service, reporting for BBC's Punjabi language service, and creating reels and digital-first content for social platforms.</div>
+    </div>
+  </div>
+  <div class="exp-row">
+    <div class="exp-date">Jan - Mar 2026</div>
+    <div>
+      <div class="exp-role">Producer (Planning)</div>
+      <div class="exp-org">BBC Collective Newsroom | Input Team</div>
+      <div class="exp-desc">Worked with the Input Team across BBC Indian languages, coordinating between Indian-language services and wider BBC teams. Wrote daily prospects for wider BBC teams, reported original stories, and assisted in the roll out of planned series on different themes.</div>
     </div>
   </div>
   <div class="exp-row">
